@@ -4,4 +4,4 @@ services:
 before_install:
     - docker build -t pkp/ci-cd -f Dockerfile.dev .  
 script:
-    - docker run -e CI=true pkp/ci-cd npm run test -- --coverage
+    - docker run -e CI=true pkp/ci-cd 
