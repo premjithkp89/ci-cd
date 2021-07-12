@@ -3,8 +3,7 @@ services:
   - docker
   
 before_install:  
-  - gem install bundler --pre
   - docker build -t pkp/ci-cd -f Dockerfile.dev .
 
 script:
-  - docker run pkp/ci-cd npm run test -- --coverage
+  - docker run -e CI=true pkp/ci-cd npm run test
